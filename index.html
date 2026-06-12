@@ -114,23 +114,23 @@
   <!-- RESUMO -->
   <h2>Resumo executivo</h2>
   <div class="stats">
-    <div class="stat"><div class="n">25</div><div class="l">Requisitos funcionais</div></div>
+    <div class="stat"><div class="n">31</div><div class="l">Requisitos funcionais</div></div>
     <div class="stat green"><div class="n">9</div><div class="l">✅ Implementados</div></div>
     <div class="stat amber"><div class="n">2</div><div class="l">🚧 Em andamento</div></div>
-    <div class="stat blue"><div class="n">14</div><div class="l">📋 Planejados</div></div>
+    <div class="stat blue"><div class="n">20</div><div class="l">📋 Planejados</div></div>
   </div>
 
   <div class="progress-wrap">
     <strong>Progresso geral</strong>
     <div class="bar" style="margin-top:10px;">
-      <div class="b-green" style="width:36%"></div>
-      <div class="b-amber" style="width:8%"></div>
-      <div class="b-blue"  style="width:56%"></div>
+      <div class="b-green" style="width:29%"></div>
+      <div class="b-amber" style="width:6%"></div>
+      <div class="b-blue"  style="width:65%"></div>
     </div>
     <div class="legend">
       <span><i style="background:var(--green)"></i>Implementado (9)</span>
       <span><i style="background:var(--amber)"></i>Em andamento (2)</span>
-      <span><i style="background:#90caf9"></i>Planejado (14)</span>
+      <span><i style="background:#90caf9"></i>Planejado (20)</span>
     </div>
   </div>
 
@@ -258,6 +258,19 @@
       <tr><td class="id">RF-23</td><td><strong>Correção interativa:</strong> arrastar o ponto do pico no gráfico para corrigir R-R/P-R, com o valor em ms atualizando junto</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
       <tr><td class="id">RF-24</td><td>Relatório final consolidado com todos os ECGs</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
       <tr><td class="id">RF-25</td><td>Apresentar os dados em forma <strong>gráfica e numérica</strong> (traçado com derivações + métricas)</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+    </table>
+  </div>
+
+  <div class="group">
+    <div class="ghead">Grupo G — Fluxo de trabalho clínico e base de dados</div>
+    <table>
+      <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
+      <tr><td class="id">RF-26</td><td>Abrir imagem pelo explorador do Windows e <strong>rodar a detecção automática na hora</strong>, já mostrando gráfico + métricas</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-27</td><td><strong>Ler do nome do arquivo</strong> o ID, o nome e se é pré/pós — automaticamente e tolerante a erros de digitação. Correção manual só em exceções</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-28</td><td>Botão <strong>Salvar = validação</strong> dos marcadores e dados pelo operador</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-29</td><td>Ao <strong>reabrir a imagem</strong>, recarregar o que foi validado (marcadores e dados salvos)</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-30</td><td><strong>Salvar PNG</strong> da tela (<code>IDXX_pos</code>/<code>IDXX_pre</code>) — base de dados para futuro aprendizado de máquina</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-31</td><td><strong>Planilha mestre única</strong> com P-R, R-R, BPM e mais, uma linha por ID + condição</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
     </table>
   </div>
 
