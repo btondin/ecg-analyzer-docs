@@ -65,6 +65,16 @@
   .stage.todo{border-top:4px solid var(--blue);}
   .stage.todo .tag{background:var(--blue-bg); color:var(--blue);}
 
+  /* timeline */
+  .timeline{position:relative; margin-top:18px; padding-left:30px;}
+  .timeline::before{content:''; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:var(--line);}
+  .tl-item{position:relative; margin-bottom:20px;}
+  .tl-item::before{content:''; position:absolute; left:-26px; top:3px; width:14px; height:14px; border-radius:50%; background:#90caf9; border:2px solid #fff; box-shadow:0 0 0 2px var(--line);}
+  .tl-item.done::before{background:var(--green);}
+  .tl-date{font-size:12px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.5px;}
+  .tl-item h4{margin:2px 0 4px; font-size:15px;}
+  .tl-item p{margin:0; font-size:13px; color:var(--muted);}
+
   /* requirement groups */
   .group{background:var(--card); border:1px solid var(--line); border-radius:14px; margin-top:16px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,.05);}
   .group > .ghead{padding:14px 18px; font-weight:700; background:#fafbfc; border-bottom:1px solid var(--line);}
@@ -104,23 +114,23 @@
   <!-- RESUMO -->
   <h2>Resumo executivo</h2>
   <div class="stats">
-    <div class="stat"><div class="n">24</div><div class="l">Requisitos funcionais</div></div>
+    <div class="stat"><div class="n">25</div><div class="l">Requisitos funcionais</div></div>
     <div class="stat green"><div class="n">9</div><div class="l">✅ Implementados</div></div>
     <div class="stat amber"><div class="n">2</div><div class="l">🚧 Em andamento</div></div>
-    <div class="stat blue"><div class="n">13</div><div class="l">📋 Planejados</div></div>
+    <div class="stat blue"><div class="n">14</div><div class="l">📋 Planejados</div></div>
   </div>
 
   <div class="progress-wrap">
     <strong>Progresso geral</strong>
     <div class="bar" style="margin-top:10px;">
-      <div class="b-green" style="width:37.5%"></div>
-      <div class="b-amber" style="width:8.3%"></div>
-      <div class="b-blue"  style="width:54.2%"></div>
+      <div class="b-green" style="width:36%"></div>
+      <div class="b-amber" style="width:8%"></div>
+      <div class="b-blue"  style="width:56%"></div>
     </div>
     <div class="legend">
       <span><i style="background:var(--green)"></i>Implementado (9)</span>
       <span><i style="background:var(--amber)"></i>Em andamento (2)</span>
-      <span><i style="background:#90caf9"></i>Planejado (13)</span>
+      <span><i style="background:#90caf9"></i>Planejado (14)</span>
     </div>
   </div>
 
@@ -152,6 +162,32 @@
       <span class="tag">📋 Planejada</span>
       <h3>5 · GUI clínica</h3>
       <ul><li>Várias imagens</li><li>Ajuste manual</li><li>Relatório final</li></ul>
+    </div>
+  </div>
+
+  <!-- LINHA DO TEMPO -->
+  <h2>Linha do tempo do projeto</h2>
+  <p class="sub">Marcos concluídos, do mais recente ao mais antigo.</p>
+  <div class="timeline">
+    <div class="tl-item done">
+      <div class="tl-date">12 jun 2026</div>
+      <h4>Documentação e painel de acompanhamento</h4>
+      <p>Requisitos do software organizados, este painel publicado na internet para acompanhamento, e definida a tecnologia da futura tela de uso.</p>
+    </div>
+    <div class="tl-item done">
+      <div class="tl-date">12 jun 2026</div>
+      <h4>Motor de análise unificado e validado</h4>
+      <p>Toda a análise do ECG passou a usar um único componente central, testado e estável — a mesma imagem sempre produz o mesmo resultado.</p>
+    </div>
+    <div class="tl-item done">
+      <div class="tl-date">Maio 2026</div>
+      <h4>Medição do intervalo P-R (início)</h4>
+      <p>Escolha automática da melhor derivação e medição do intervalo P-R implementadas; precisão em refinamento.</p>
+    </div>
+    <div class="tl-item done">
+      <div class="tl-date">Início de 2026</div>
+      <h4>Detecção de R-R e frequência cardíaca</h4>
+      <p>Identificação confiável dos batimentos e cálculo do intervalo R-R e do BPM concluídos e validados.</p>
     </div>
   </div>
 
@@ -219,8 +255,9 @@
     <table>
       <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
       <tr><td class="id">RF-22</td><td>GUI para carregar várias imagens de uma vez</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-23</td><td>Ajuste manual com mouse quando a detecção falhar</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-23</td><td><strong>Correção interativa:</strong> arrastar o ponto do pico no gráfico para corrigir R-R/P-R, com o valor em ms atualizando junto</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
       <tr><td class="id">RF-24</td><td>Relatório final consolidado com todos os ECGs</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-25</td><td>Apresentar os dados em forma <strong>gráfica e numérica</strong> (traçado com derivações + métricas)</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
     </table>
   </div>
 
@@ -253,6 +290,22 @@
     respiração afeta a métrica independentemente do tônus autonômico. Será
     implementada conforme solicitado, mas o relatório deve <strong>sinalizar a
     limitação</strong> e a janela insuficiente.
+  </div>
+
+  <!-- ENTREGA / RNF -->
+  <h2>Entrega e requisitos técnicos</h2>
+  <p class="sub">Como o software será entregue e usado no dia a dia.</p>
+  <div class="group">
+    <div class="ghead">Requisitos não-funcionais</div>
+    <table>
+      <tr><th>Tema</th><th>Definição</th></tr>
+      <tr><td><strong>Plataforma</strong></td><td>Aplicativo desktop para Windows</td></tr>
+      <tr><td><strong>Distribuição</strong></td><td>Executável <code>.exe</code> autossuficiente — duplo-clique, <strong>sem instalar Python</strong> nem outras dependências (inclui embutir o OCR/Tesseract)</td></tr>
+      <tr><td><strong>Interface</strong></td><td>Intuitiva para profissionais de saúde, sem conhecimento técnico — fluxo de poucos cliques, sem terminal</td></tr>
+      <tr><td><strong>Interação</strong></td><td>Exibe o traçado do ECG com as derivações; quando a detecção automática falha, o operador <strong>arrasta o ponto do pico no gráfico</strong> para corrigir, e o valor do intervalo (em ms) se ajusta junto, em tempo real</td></tr>
+      <tr><td><strong>Tecnologia de UI</strong></td><td>PySide6 (Qt) com gráficos Matplotlib embutidos; empacotamento via PyInstaller</td></tr>
+      <tr><td><strong>Confiabilidade</strong></td><td>Resultado determinístico (mesma imagem → mesmo resultado); falhas sempre visíveis e avisadas, nunca silenciosas</td></tr>
+    </table>
   </div>
 
   <!-- REFERENCIAS -->
