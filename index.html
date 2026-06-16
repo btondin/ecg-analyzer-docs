@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECG Analyzer — Painel de Requisitos</title>
+<title>Analisador de ECG — Painel de Requisitos</title>
 <style>
   :root{
     --green:#2e7d32; --green-bg:#e6f4ea;
@@ -101,11 +101,11 @@
 <div class="wrap">
 
   <header class="top">
-    <h1>🫀 ECG Analyzer — Painel de Requisitos</h1>
+    <h1>🫀 Analisador de ECG — Painel de Requisitos</h1>
     <p>Análise automática de ECG a partir de imagens de apps móveis · Objetivo primário: medir o intervalo P-R</p>
     <div class="meta">
-      <span>📄 Documento v1.0</span>
-      <span>📅 12/06/2026</span>
+      <span>📄 Documento v1.1</span>
+      <span>📅 16/06/2026</span>
       <span>👤 Bruno Tondin (Eng. Elétrica)</span>
       <span>🔬 Uso clínico-experimental</span>
     </div>
@@ -114,23 +114,23 @@
   <!-- RESUMO -->
   <h2>Resumo executivo</h2>
   <div class="stats">
-    <div class="stat"><div class="n">32</div><div class="l">Requisitos funcionais</div></div>
-    <div class="stat green"><div class="n">11</div><div class="l">✅ Implementados</div></div>
-    <div class="stat amber"><div class="n">9</div><div class="l">🚧 Em andamento</div></div>
-    <div class="stat blue"><div class="n">12</div><div class="l">📋 Planejados</div></div>
+    <div class="stat"><div class="n">34</div><div class="l">Requisitos funcionais</div></div>
+    <div class="stat green"><div class="n">20</div><div class="l">✅ Implementados</div></div>
+    <div class="stat amber"><div class="n">7</div><div class="l">🚧 Em andamento</div></div>
+    <div class="stat blue"><div class="n">7</div><div class="l">📋 Planejados</div></div>
   </div>
 
   <div class="progress-wrap">
     <strong>Progresso geral</strong>
     <div class="bar" style="margin-top:10px;">
-      <div class="b-green" style="width:34%"></div>
-      <div class="b-amber" style="width:28%"></div>
-      <div class="b-blue"  style="width:38%"></div>
+      <div class="b-green" style="width:59%"></div>
+      <div class="b-amber" style="width:21%"></div>
+      <div class="b-blue"  style="width:20%"></div>
     </div>
     <div class="legend">
-      <span><i style="background:var(--green)"></i>Implementado (11)</span>
-      <span><i style="background:var(--amber)"></i>Em andamento (9)</span>
-      <span><i style="background:#90caf9"></i>Planejado (12)</span>
+      <span><i style="background:var(--green)"></i>Implementado (20)</span>
+      <span><i style="background:var(--amber)"></i>Em andamento (7)</span>
+      <span><i style="background:#90caf9"></i>Planejado (7)</span>
     </div>
   </div>
 
@@ -148,20 +148,20 @@
       <h3>2 · Intervalo P-R</h3>
       <ul><li>Seleção de derivação</li><li>Onda P (pico/onset)</li><li>Onset do QRS</li></ul>
     </div>
-    <div class="stage todo">
-      <span class="tag">📋 Planejada</span>
+    <div class="stage done">
+      <span class="tag">✅ Concluída</span>
       <h3>3 · Robustez</h3>
-      <ul><li>Detectar UI Android</li><li>Tratar paisagem</li><li>Calibração por imagem</li></ul>
+      <ul><li>Tratar paisagem ✅</li><li>Calibração por imagem ✅</li><li>Avisar UI Android 🚧</li></ul>
     </div>
-    <div class="stage todo">
-      <span class="tag">📋 Planejada</span>
+    <div class="stage done">
+      <span class="tag">✅ Concluída</span>
       <h3>4 · Métricas HRV</h3>
       <ul><li>RMSSD, SDNN</li><li>HF, LF</li><li>LF/HF (com ressalva)</li></ul>
     </div>
-    <div class="stage todo">
-      <span class="tag">📋 Planejada</span>
+    <div class="stage wip">
+      <span class="tag">🚧 Em andamento</span>
       <h3>5 · GUI clínica</h3>
-      <ul><li>Várias imagens</li><li>Ajuste manual</li><li>Relatório final</li></ul>
+      <ul><li>Ajuste manual ✅</li><li>Várias imagens 📋</li><li>Relatório final 📋</li></ul>
     </div>
   </div>
 
@@ -169,6 +169,16 @@
   <h2>Linha do tempo do projeto</h2>
   <p class="sub">Marcos concluídos, do mais recente ao mais antigo.</p>
   <div class="timeline">
+    <div class="tl-item done">
+      <div class="tl-date">16 jun 2026</div>
+      <h4>Edição fina do intervalo P-R, desfazer e visual escuro</h4>
+      <p>O intervalo P-R passou a ser o clinicamente relevante (<strong>início da P → início do QRS</strong>; o "pico" deixou de ser exibido), medido por um algoritmo de delineação tipo wavelet. O médico pode <strong>arrastar as bordas do intervalo</strong> para corrigir o início da P/QRS e <strong>apagar um par com duplo-clique</strong>; <strong>Ctrl-Z</strong> desfaz qualquer ajuste. Corrigido o cálculo do 1º batimento. Interface agora em <strong>tema escuro</strong> (traçado segue branco) e tutorial atualizado com todas as funções.</p>
+    </div>
+    <div class="tl-item done">
+      <div class="tl-date">16 jun 2026</div>
+      <h4>Correção manual na tela e base de tempo robusta</h4>
+      <p>O operador agora pode ajustar a medição direto no traçado: trocar a derivação e <strong>criar, mover e apagar os marcadores de P e R com o mouse</strong>, com as medidas recalculando na hora — sempre pareando P e R do <strong>mesmo batimento</strong>. A base de tempo passou a se <strong>calibrar sozinha pela grade do exame</strong> (linhas de 1 e 5 mm), funcionando em qualquer resolução e até em fotos na horizontal (paisagem); isso corrigiu casos que antes davam frequência errada (ex.: 146 em vez de 70 bpm). Incluído zoom no eixo do tempo e leitura da janela visível.</p>
+    </div>
     <div class="tl-item done">
       <div class="tl-date">16 jun 2026</div>
       <h4>Leitura robusta de mais formatos de ECG</h4>
@@ -197,7 +207,7 @@
       <tr><td class="id">RF-02</td><td>Detectar layout automaticamente (A: coração vermelho / B: barra verde)</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
       <tr><td class="id">RF-03</td><td>OCR de metadados (BPM, data, hora, escala mm/s)</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
       <tr><td class="id">RF-04</td><td>Extrair sinal 1D de cada derivação (aVF excluído)</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
-      <tr><td class="id">RF-05</td><td>Calibração temporal (ms/pixel) via grade + sanity-check por BPM</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-05</td><td>Calibração temporal (ms/pixel): grade <strong>auto-calibrada pela estrutura 1 mm/5 mm</strong> (independe de resolução) + sanity-check por BPM</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
     </table>
   </div>
 
@@ -207,8 +217,8 @@
       <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
       <tr><td class="id">RF-06</td><td>Detecção robusta de picos R (bandpass + validação cross-lead)</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
       <tr><td class="id">RF-07</td><td>Intervalo R-R e BPM com validação cruzada</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
-      <tr><td class="id">RF-08</td><td>Seleção automática da melhor derivação</td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 ~60–63%</span></td></tr>
-      <tr><td class="id">RF-09</td><td><strong>Medição do intervalo P-R</strong> (pico/onset da P; onset do QRS)</td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 Refinando</span></td></tr>
+      <tr><td class="id">RF-08</td><td>Seleção automática da melhor derivação (override manual — ver RF-23)</td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 ~69% (24/35)</span></td></tr>
+      <tr><td class="id">RF-09</td><td><strong>Medição do intervalo P-R</strong> = <strong>início da P → início do QRS</strong> (definição clínica; o "pico" não é mais exibido). Onset por delineação tipo wavelet ancorada nos P/R, editável. Igual no automático e no manual</td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 Onset consistente (desvio ~12 ms); validação clínica do valor pendente</span></td></tr>
     </table>
   </div>
 
@@ -228,10 +238,10 @@
     <div class="ghead">Grupo D — Robustez a dados heterogêneos</div>
     <table>
       <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
-      <tr><td class="id">RF-15</td><td>Detectar e <strong>avisar</strong> UI de Android no screenshot</td><td class="prio">Média</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-16</td><td>Detectar e tratar orientação <strong>paisagem</strong></td><td class="prio">Média</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-17</td><td>Validar calibração por imagem (grade vs BPM); alertar &gt;10%</td><td class="prio">Média</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-18</td><td><strong>Não assumir</strong> ms/pixel universal entre apps/dispositivos</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-15</td><td>Detectar e <strong>avisar</strong> UI de Android no screenshot</td><td class="prio">Média</td><td><span class="badge b-wip">🚧 Parcial (avisos calculados; GUI pendente)</span></td></tr>
+      <tr><td class="id">RF-16</td><td>Detectar e tratar orientação <strong>paisagem</strong></td><td class="prio">Média</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-17</td><td>Validar calibração por imagem (grade vs BPM); alertar &gt;10%</td><td class="prio">Média</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-18</td><td><strong>Não assumir</strong> ms/pixel universal entre apps/dispositivos</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
     </table>
   </div>
 
@@ -250,10 +260,12 @@
     <table>
       <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
       <tr><td class="id">RF-22</td><td>GUI para carregar várias imagens de uma vez</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-23</td><td><strong>Correção interativa:</strong> arrastar o ponto do pico no gráfico para corrigir R-R/P-R, com o valor em ms atualizando junto</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-23</td><td><strong>Correção interativa:</strong> forçar derivação (menu); criar / mover / apagar picos P e R; <strong>arrastar as bordas do intervalo P-R</strong> (onsets); <strong>duplo-clique</strong> no intervalo apaga o par; <strong>Ctrl-Z</strong> desfaz. Recalcula pareando P↔R do mesmo batimento</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
       <tr><td class="id">RF-24</td><td>Relatório final consolidado com todos os ECGs</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-25</td><td>Apresentar os dados em forma <strong>gráfica e numérica</strong> (traçado com derivações + métricas)</td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 Em andamento</span></td></tr>
-      <tr><td class="id">RF-32</td><td><strong>Barra de menu</strong>: Arquivo (Abrir imagem, Preferências, Sair) e Ajuda (Versão, Ajuda, Tutorial)</td><td class="prio">Média</td><td><span class="badge b-wip">🚧 Em andamento</span></td></tr>
+      <tr><td class="id">RF-25</td><td>Apresentar os dados em forma <strong>gráfica e numérica</strong> (traçado com derivações + painel de medidas)</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-32</td><td><strong>Barra de menu</strong>: Arquivo (Abrir imagem, Preferências, Sair) e Ajuda (Versão, Ajuda, Tutorial)</td><td class="prio">Média</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-33</td><td><strong>Zoom no eixo do tempo</strong> (roda do mouse, todas as derivações juntas) + leitura da <strong>janela de tempo visível</strong></td><td class="prio">Média</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-34</td><td><strong>Confiança/avisos por imagem</strong> (ALTA/MÉDIA/BAIXA + avisos) salvos em results.json</td><td class="prio">Média</td><td><span class="badge b-wip">🚧 Parcial (exibição na GUI pendente)</span></td></tr>
     </table>
   </div>
 
@@ -261,8 +273,8 @@
     <div class="ghead">Grupo G — Fluxo de trabalho clínico e base de dados</div>
     <table>
       <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
-      <tr><td class="id">RF-26</td><td>Abrir imagem pelo explorador do Windows e <strong>rodar a detecção automática na hora</strong>, já mostrando gráfico + métricas</td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 Em andamento</span></td></tr>
-      <tr><td class="id">RF-27</td><td><strong>Ler do nome do arquivo</strong> o ID, o nome e se é pré/pós — automaticamente e tolerante a erros de digitação. Correção manual só em exceções. <em>Validado em 593 arquivos: ID 100%, condição 99,8%, nome 100%.</em></td><td class="prio">Alta</td><td><span class="badge b-wip">🚧 Em andamento</span></td></tr>
+      <tr><td class="id">RF-26</td><td>Abrir imagem pelo explorador do Windows e <strong>rodar a detecção automática na hora</strong>, já mostrando gráfico + métricas</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-27</td><td><strong>Ler do nome do arquivo</strong> o ID, o nome e se é pré/pós — automaticamente e tolerante a erros de digitação. Correção manual só em exceções. <em>Validado em 593 arquivos: ID 100%, condição 99,8%, nome 100%.</em></td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
       <tr><td class="id">RF-28</td><td>Botão <strong>Salvar = validação</strong> dos marcadores e dados pelo operador</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
       <tr><td class="id">RF-29</td><td>Ao <strong>reabrir a imagem</strong>, recarregar o que foi validado (marcadores e dados salvos)</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
       <tr><td class="id">RF-30</td><td><strong>Salvar PNG</strong> da tela (<code>IDXX_pos</code>/<code>IDXX_pre</code>) — base de dados para futuro aprendizado de máquina</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
@@ -325,7 +337,7 @@
   </ol>
 
   <footer>
-    ECG Analyzer · Painel gerado a partir de <code>REQUISITOS.md</code> · Abra este arquivo com duplo-clique em qualquer navegador.
+    Analisador de ECG · Painel gerado a partir de <code>REQUISITOS.md</code> · Abra este arquivo com duplo-clique em qualquer navegador.
   </footer>
 
 </div>
