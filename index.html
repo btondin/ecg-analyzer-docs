@@ -52,7 +52,7 @@
   .legend i{display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:middle;}
 
   /* roadmap */
-  .road{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:18px;}
+  .road{display:grid; grid-template-columns:repeat(6,1fr); gap:14px; margin-top:18px;}
   @media(max-width:820px){ .road{grid-template-columns:1fr 1fr;} }
   .stage{border-radius:14px; padding:16px; border:1px solid var(--line); background:var(--card); position:relative; box-shadow:0 2px 10px rgba(0,0,0,.05);}
   .stage h3{margin:0 0 6px; font-size:15px;}
@@ -104,7 +104,7 @@
     <h1>🫀 Analisador de ECG — Painel de Requisitos</h1>
     <p>Análise automática de ECG a partir de imagens de apps móveis · Objetivo primário: medir o intervalo P-R</p>
     <div class="meta">
-      <span>📄 Documento v1.1</span>
+      <span>📄 Documento v1.3</span>
       <span>📅 16/06/2026</span>
       <span>👤 Bruno Tondin (Eng. Elétrica)</span>
       <span>🔬 Uso clínico-experimental</span>
@@ -115,22 +115,22 @@
   <h2>Resumo executivo</h2>
   <div class="stats">
     <div class="stat"><div class="n">34</div><div class="l">Requisitos funcionais</div></div>
-    <div class="stat green"><div class="n">20</div><div class="l">✅ Implementados</div></div>
+    <div class="stat green"><div class="n">24</div><div class="l">✅ Implementados</div></div>
     <div class="stat amber"><div class="n">7</div><div class="l">🚧 Em andamento</div></div>
-    <div class="stat blue"><div class="n">7</div><div class="l">📋 Planejados</div></div>
+    <div class="stat blue"><div class="n">3</div><div class="l">📋 Planejados</div></div>
   </div>
 
   <div class="progress-wrap">
     <strong>Progresso geral</strong>
     <div class="bar" style="margin-top:10px;">
-      <div class="b-green" style="width:59%"></div>
+      <div class="b-green" style="width:70%"></div>
       <div class="b-amber" style="width:21%"></div>
-      <div class="b-blue"  style="width:20%"></div>
+      <div class="b-blue"  style="width:9%"></div>
     </div>
     <div class="legend">
-      <span><i style="background:var(--green)"></i>Implementado (20)</span>
+      <span><i style="background:var(--green)"></i>Implementado (24)</span>
       <span><i style="background:var(--amber)"></i>Em andamento (7)</span>
-      <span><i style="background:#90caf9"></i>Planejado (7)</span>
+      <span><i style="background:#90caf9"></i>Planejado (3)</span>
     </div>
   </div>
 
@@ -161,7 +161,12 @@
     <div class="stage wip">
       <span class="tag">🚧 Em andamento</span>
       <h3>5 · GUI clínica</h3>
-      <ul><li>Ajuste manual ✅</li><li>Várias imagens 📋</li><li>Relatório final 📋</li></ul>
+      <ul><li>Ajuste manual ✅</li><li>Salvar sessão + planilha ✅</li><li>Várias imagens 📋</li><li>Relatório final 📋</li></ul>
+    </div>
+    <div class="stage todo">
+      <span class="tag">📋 Próxima</span>
+      <h3>6 · Distribuição (.exe)</h3>
+      <ul><li>Executável único standalone</li><li>Tesseract embutido (OCR)</li><li>Versão 1.0.0</li><li>Recusar abrir <code>_scrsht</code></li></ul>
     </div>
   </div>
 
@@ -275,10 +280,10 @@
       <tr><th>ID</th><th>Requisito</th><th>Prioridade</th><th>Status</th></tr>
       <tr><td class="id">RF-26</td><td>Abrir imagem pelo explorador do Windows e <strong>rodar a detecção automática na hora</strong>, já mostrando gráfico + métricas</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
       <tr><td class="id">RF-27</td><td><strong>Ler do nome do arquivo</strong> o ID, o nome e se é pré/pós — automaticamente e tolerante a erros de digitação. Correção manual só em exceções. <em>Validado em 593 arquivos: ID 100%, condição 99,8%, nome 100%.</em></td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
-      <tr><td class="id">RF-28</td><td>Botão <strong>Salvar = validação</strong> dos marcadores e dados pelo operador</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-29</td><td>Ao <strong>reabrir a imagem</strong>, recarregar o que foi validado (marcadores e dados salvos)</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-30</td><td><strong>Salvar PNG</strong> da tela (<code>IDXX_pos</code>/<code>IDXX_pre</code>) — base de dados para futuro aprendizado de máquina</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
-      <tr><td class="id">RF-31</td><td><strong>Planilha mestre única</strong> com P-R, R-R, BPM e mais, uma linha por ID + condição</td><td class="prio">Alta</td><td><span class="badge b-todo">📋 Planejado</span></td></tr>
+      <tr><td class="id">RF-28</td><td>Botão <strong>Confirmar / Salvar = validação</strong> dos marcadores e dados pelo operador</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-29</td><td>Ao <strong>reabrir a imagem</strong>, recarregar o que foi validado: salva <code>&lt;imagem&gt;.ecg</code> (derivação + picos P/R + intervalos P-R); traçados gravados só p/ arquivo, não recarregados</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-30</td><td><strong>Salvar screenshot</strong> da tela (<code>&lt;imagem&gt;_scrsht.jpg</code>) — base de dados para futuro aprendizado de máquina</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
+      <tr><td class="id">RF-31</td><td><strong>Planilha mestre única</strong> (CSV Excel pt-BR) com P-R, R-R, BPM e HRV, uma linha por ID + condição (pergunta antes de criar/sobrescrever)</td><td class="prio">Alta</td><td><span class="badge b-done">✅ Pronto</span></td></tr>
     </table>
   </div>
 
